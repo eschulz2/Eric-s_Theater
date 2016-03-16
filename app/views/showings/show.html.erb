@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+		<hr>
+		<p>
+		  Title:
+		  <strong><%= @showing.title %></strong>
+		</p>
+		 
+		<p>
+		  Time:
+		  <strong><%= @showing.time %></strong>
+		</p>
+		<p>
+		  Seat Count:
+		  <strong><%= @showing.seat_count %></strong>
+		</p>
+		<p>
+		  Auditorium:
+		  <strong><%= @showing.auditorium %></strong>
+		</p>
+		<br>
+		<%= button_to "Edit", edit_showing_path, method: :get %>
+	</div>
+</div>
