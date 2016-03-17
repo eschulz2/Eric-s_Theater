@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  showing_id: 1
+  name: MyString
+  email: MyString
+  cc_num: 1
+  cc_exp: MyString
+
+two:
+  showing_id: 1
+  name: MyString
+  email: MyString
+  cc_num: 1
+  cc_exp: MyString
