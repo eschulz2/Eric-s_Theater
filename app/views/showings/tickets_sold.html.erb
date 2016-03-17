@@ -31,8 +31,7 @@
     <tr>
     	<th>Name</th>
   		<th>Email</th>
-    	<th>CC Num</th>
-  		<th>CC Exp</th>
+    	<th>CC Num/Exp</th>
     </tr>
   </thead>
   <tbody>
@@ -40,8 +39,7 @@
   	<tr>
   	  <td><%= ticket.name %></td>
   	  <td><%= ticket.email %></td>
-  	  <td><%= ticket.cc_num %></td>
-  	  <td><%= ticket.cc_exp %></td>
+  	  <td><%= ticket.cc_num %><br><%= ticket.cc_exp %></td>
   	</tr>
   	<% end %>
   </tbody>
