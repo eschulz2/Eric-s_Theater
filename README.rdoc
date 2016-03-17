@@ -1,6 +1,10 @@
 == Movie Theater 
 
-This Rails app allows a client to start selling tickets online.  Bootstrap 3 is used and styling is very limited thus far, although the app works well on mobile.  No actual payment process is implemented. 
+This Rails app allows a client to start selling tickets online.  Bootstrap 3 is used and styling is very limited thus far, although the app works well on mobile.  No actual payment process is implemented.
+
+My mindset while building this app was to make sure I kept it as simple as possible while still completing all of the functionality required by the client.  I chose Bootstrap since I'm familiar with its grid system which allows for an app to be built for early mobile use.  There are two tables in the database; Showings is for a movie's showing details, and Tickets is for customer purchases.  I had thought about creating a third table called Seats which could act as a join table connecting a Showing to a purchased Ticket, but I decided against that since the two tables are sufficient to build the app according to the client's requirements.  If future work included creating a User table for the theater's customers, then the Ticket table could be modified to act as a join table between Users and Showings.  
+
+The Admin Board easily allows the theater owner to view all past and future movie showings, create a new showing, and view all tickets sales or sales by movie.  The prompt for this project didn't mention anything about ticket price, so I didn't include that in the database.  In the future a price column could easily be added.  
 
 The following functionality is built into this app:
 
