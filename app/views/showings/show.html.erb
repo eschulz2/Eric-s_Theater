@@ -8,7 +8,7 @@
 		 
 		<p>
 		  Time:
-		  <strong><%= @showing.time %></strong>
+		  <strong><%= @showing.time.localtime.to_formatted_s(:short) %></strong>
 		</p>
 		<p>
 		  Seats Remaining:
@@ -22,3 +22,23 @@
 		<%= button_to "Edit", edit_showing_path, method: :get %>
 	</div>
 </div>
+
+<hr>
+<% unless @showing.seat_count == 0 %>
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+			<h2>Buy Your Ticket</h2>
+			<%= simple_form_for @ticket, url: tickets_path do |f| %>
+
+			  <%= f.error_notification %>
+			  <%= f.input :name, label: "Your Name", required: true, error: "Required Field" %>
+				<%= f.input :email, label: "Your Email", required: true, error: "Required Field" %>
+			  <%= f.input :cc_num, label: "Credit Card Number", required: true, error: "Required Field" %>
+			  <%= f.input :cc_exp, label: "Credit Card Experation", required: true, placeholder: "mm/yy", error: "Required Field" %>
+			  <%= f.input :showing_id, as: :hidden, input_html: { value: @showing.id } %>
+			  <%= f.button :submit, "Buy Ticket" %>
+			<% end %>
+
+		</div>
+	</div>
+<% end %>
