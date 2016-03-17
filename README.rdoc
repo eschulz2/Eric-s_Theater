@@ -16,4 +16,4 @@ The following functionality is built into this app:
 
 * All ticket sales are saved to the database so that the owner can see a list of orders for each movie via an Admin page
 
-Visit a live version of this app at: <https://ericstheater.herokuapp.com/>
+Visit a live version of this app at: https://ericstheater.herokuapp.com/
