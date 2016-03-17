@@ -29,7 +29,7 @@ class ShowingsController < ApplicationController
   		showing = @ticket.showing
   		showing.seat_count -= 1
   		showing.save
-  		TicketMailer.receipt(@ticket).deliver_now
+  		SendEmailJob.set(wait: 3.seconds).perform_later(@tickets)
   		flash[:notice] = "Ticket Purchased!"
   		redirect_to :root
   	else
