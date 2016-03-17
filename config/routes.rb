@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'tickets_sold'
     end
   end
+  get "/tickets" => 'tickets#index'
   get "/admin" => 'admins#index'
   post "/tickets" => 'showings#make_ticket'
   

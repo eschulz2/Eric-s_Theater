@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    	<th>Name/Email</th>
+    	<th>CC Num/Exp</th>
+      <th>Showing</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @tickets.each do |ticket| %>
+  	<tr>
+  	  <td><%= ticket.name %><br><%= ticket.email %></td>
+  	  <td><%= ticket.cc_num %><br><%= ticket.cc_exp %></td>
+      <% unless ticket.showing == nil %> <!-- some tickets locally have showing_id == nil -->
+        <td><%= link_to ticket.showing.title, tickets_sold_showing_path(ticket.showing)  %></td>
+      <% end %>
+  	</tr>
+  	<% end %>
+  </tbody>
+</table>
