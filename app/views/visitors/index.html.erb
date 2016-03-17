@@ -31,9 +31,9 @@
                   <h3><%= showing.title %></h3>
                   <h4><%= showing.time.localtime.to_formatted_s(:short)   %></h4>
                   <% if showing.seat_count > 0 %>
-                    <%= link_to("Get Tickets", showing_path(showing), class: "btn btn-success") %>
+                    <%= link_to "Get Tickets", showing_path(showing), class: "btn btn-success"  %>
                   <% else %>
-                    <h5>Sold Out</h5>
+                    <h5><%= link_to "Sold Out", showing_path(showing), style: "color:red;" %></h5>
                   <% end %>
 
               </div></td>
