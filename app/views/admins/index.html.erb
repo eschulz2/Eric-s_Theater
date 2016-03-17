@@ -4,6 +4,7 @@
       <h4>Admin Dashboard</h4>
       <p>Here you can view upcoming and past movie showings, and you can click on a showing to view its tickets that were sold.  Click on the button bellow to create a new showing.  If you're not authorized to be here then you better leave immediately!</p>
       <%= link_to "Click to Create a New Showing!", new_showing_path, class: "btn btn-primary page-scroll" %>
+      <h6>To view all tickets ever sold regardless of particular showing, <%= link_to "click here", tickets_path %>.
     </div>
   </div>
 

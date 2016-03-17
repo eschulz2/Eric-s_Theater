@@ -18,6 +18,10 @@
 		  Auditorium:
 		  <strong><%= @showing.auditorium %></strong>
 		</p>
+		<p>
+		  Price:
+		  <strong>$10.00</strong>
+		</p>
 		<br>
 		<% unless @showing.time < Time.now %>
 			<%= button_to "Edit", edit_showing_path, method: :get %>
