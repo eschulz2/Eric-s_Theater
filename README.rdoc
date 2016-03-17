@@ -1,28 +1,19 @@
-== README
+== Movie Theater 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails app allows a client to start selling tickets online.  Bootstrap 3 is used and styling is very limited thus far, although the app works well on mobile.  No actual payment process is implemented. 
 
-Things you may want to cover:
+The following functionality is built into this app:
 
-* Ruby version
+* Customers can visit and see movies with their showtimes
 
-* System dependencies
+* Movie tickets can be purchased so long as their remain available seats in the movie showing
 
-* Configuration
+* Validations prevent bogus customer orders from completing, and a customer is notified if there is a problem with his order
 
-* Database creation
+* Email receipts are sent when tickets are purchased
 
-* Database initialization
+* The theater owner can set and edit a movie's time, auditorium, and capacity
 
-* How to run the test suite
+* All ticket sales are saved to the database so that the owner can see a list of orders for each movie via an Admin page
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Visit a live version of this app at: <https://ericstheater.herokuapp.com/>
