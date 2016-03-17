@@ -38,6 +38,10 @@ class ShowingsController < ApplicationController
   	end
   end
 
+  def tickets_sold
+  	@showing = Showing.find(params[:id])
+  end
+
   def edit
   	@showing = Showing.find(params[:id])
   end

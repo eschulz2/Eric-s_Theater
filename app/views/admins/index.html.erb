@@ -1,0 +1,93 @@
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 text-center">
+      <h4>Admin Dashboard</h4>
+      <p>Here you can view upcoming and past movie showings, and you can click on a showing to view its tickets that were sold.  Click on the button bellow to create a new showing.  If you're not authorized to be here then you better leave immediately!</p>
+      <%= link_to "Click to Create a New Showing!", new_showing_path, class: "btn btn-primary page-scroll" %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <h2 class="text-center">Upcoming Showings
+    <br>
+      
+    <br>
+
+      <table class="table table-striped">
+        <thead >
+          <tr>
+
+          </tr>
+        </thead>
+        <tbody>
+
+            <% @upcoming_showings.each do |showing| %>
+            <tr>
+
+              <td><div class="text-center">
+                  <!-- <hr> -->
+                  <h4><%= showing.title %></h4>
+                  <h4><%= showing.time.localtime.to_formatted_s(:short)   %></h4>
+                  <h4>Seats Remaining: <%= showing.seat_count %></h4>
+                  <% if showing.tickets.count > 0 %>
+                    <%= link_to "View Tickets Sold", tickets_sold_showing_path(showing), class: "btn btn-primary btn-sm"  %>
+                  <% else %>
+                    <h5>No Tickets Sold</h5>
+                  <% end %>
+                  <%= link_to "Edit", edit_showing_path(showing), class: "btn btn-info btn-sm"  %>
+
+              </div></td>
+
+            </tr>
+
+          <% end %>
+      
+        </tbody>
+
+      </table>
+
+  </div>
+
+
+  <div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <h2 class="text-center">Past Showings
+    <br>
+      
+    <br>
+
+      <table class="table table-striped">
+        <thead >
+          <tr>
+
+          </tr>
+        </thead>
+        <tbody>
+
+            <% @past_showings.each do |showing| %>
+            <tr>
+
+              <td><div class="text-center">
+                  <!-- <hr> -->
+                  <h4><%= showing.title %></h4>
+                  <h4><%= showing.time.localtime.to_formatted_s(:short)   %></h4>
+                  <h4>Seats Remaining: <%= showing.seat_count %></h4>
+                  <% if showing.tickets.count > 0 %>
+                    <%= link_to "View Tickets Sold", tickets_sold_showing_path(showing), class: "btn btn-primary btn-sm"  %>
+                  <% else %>
+                    <h5>No Tickets Sold</h5>
+                  <% end %>
+
+              </div></td>
+
+            </tr>
+
+          <% end %>
+      
+        </tbody>
+
+      </table>
+
+  </div>
+</body>
