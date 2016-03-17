@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @ticket.name %></h1>
+    <p>
+      You paid $10.00 to see <b><%= @showing.title %></b> playing <b><%= @showing.time.localtime.to_formatted_s(:short) %></b>.
+    </p>
+    <p>
+      Enjoy the show!
+    </p>
+  </body>
+</html>

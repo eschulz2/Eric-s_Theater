@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem "dynamic_form"
+gem 'delayed_job_active_record'
 group :development do
   gem 'rails_layout'
 end
